@@ -10,5 +10,5 @@ git clone https://github.com/sunnut/grafana-chinamap-panel.git
 sudo service grafana-server restart
 ``` 
 ## Examples
-![Screenshot](https://github.com/sunnut/grafana-chinamap-panel/tree/master/img/map-ex1.png?raw=true "China")
-![Screenshot](https://github.com/sunnut/grafana-chinamap-panel/tree/master/img/map-ex2.png?raw=true "Province")
+![Screenshot](https://github.com/sunnut/grafana-chinamap-panel/blob/master/img/map-ex1.png?raw=true "China")
+![Screenshot](https://github.com/sunnut/grafana-chinamap-panel/blob/master/img/map-ex2.png?raw=true "Province")
