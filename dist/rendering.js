@@ -47,7 +47,7 @@ System.register(['./lib/echarts.min'], function (_export, _context) {
           'iPhone 8': 'iphone8',
           'iPhone X': 'iphonex'
         };
-        var currSeriesName = '服务带宽';
+        var currSeriesName = 'iPhone 7';
         chart.container = echarts.init(element[0], 'dark');
         chart.option = {
           title: {
@@ -148,11 +148,9 @@ System.register(['./lib/echarts.min'], function (_export, _context) {
           geo: {
             map: 'china',
             selectedMode: 'single',
-            emphasis: {
-              label: {
-                show: true,
-                color: '#fff'
-              }
+            label: {
+              show: true,
+              color: '#fff'
             },
             itemStyle: {
               normal: {

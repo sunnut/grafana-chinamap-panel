@@ -1,7 +1,6 @@
 import { MetricsPanelCtrl } from 'app/plugins/sdk';
 import echarts from './lib/echarts.min';
 import rendering from './rendering';
-import _ from 'lodash';
 
 import darkJson from './lib/map/dark';
 import chinaJson from './lib/map/china';
@@ -79,19 +78,6 @@ echarts.registerMap('浙江', zhejiangData);
 echarts.registerTheme('dark', darkJson);
 echarts.registerMap('china', chinaJson);
 
-const panelDefaults = {
-  backgroundColor: '#63696e',
-  itemNormalColor: '#2d3339',
-  itemBorderColor: '#404a59',
-  itemEmphasisColor: '#2a333d',
-  labelColor: '#f5f5f5',
-  labelEmphasisColor: '#f5896b',
-  dataColors: ['#83fa52','#f6630e','#f60e48'],
-  thresholds: '0,10',
-  thresholdTextColor: '#f5f5f5',
-  unit: 'ms'
-};
-
 export class ChinaMapCtrl extends MetricsPanelCtrl {
   constructor($scope, $injector, $rootScope, backendSrv) {
     super($scope, $injector);
@@ -107,9 +93,7 @@ export class ChinaMapCtrl extends MetricsPanelCtrl {
       this.rootScope = $rootScope;
       this.templateSrv = $injector.get('templateSrv');
       this.variableSrvT = $injector.get('variableSrv');
-      _.defaults(this.panel, panelDefaults);
       this.events.on('data-received', this.onDataReceived.bind(this));
-      this.events.on('init-edit-mode', this.onInitEditMode.bind(this));
     });
   }
 
@@ -286,10 +270,6 @@ export class ChinaMapCtrl extends MetricsPanelCtrl {
     }
 
     this.render();
-  }
-
-  onInitEditMode() {
-    this.addEditorTab('ChinaMap', 'public/plugins/grafana-chinamap-panel/editor.html', 2);
   }
 
   link(scope, elem, attrs, ctrl) {

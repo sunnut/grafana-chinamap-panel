@@ -1,9 +1,9 @@
 'use strict';
 
-System.register(['app/plugins/sdk', './lib/echarts.min', './rendering', 'lodash', './lib/map/dark', './lib/map/china', './lib/map/china-city-loc', './lib/map/province/anhui', './lib/map/province/aomen', './lib/map/province/beijing', './lib/map/province/chongqing', './lib/map/province/fujian', './lib/map/province/gansu', './lib/map/province/guangdong', './lib/map/province/guangxi', './lib/map/province/guizhou', './lib/map/province/hainan', './lib/map/province/hebei', './lib/map/province/heilongjiang', './lib/map/province/henan', './lib/map/province/hubei', './lib/map/province/hunan', './lib/map/province/jiangsu', './lib/map/province/jiangxi', './lib/map/province/jilin', './lib/map/province/liaoning', './lib/map/province/neimenggu', './lib/map/province/ningxia', './lib/map/province/qinghai', './lib/map/province/shandong', './lib/map/province/shanghai', './lib/map/province/shanxi', './lib/map/province/shanxi1', './lib/map/province/sichuan', './lib/map/province/taiwan', './lib/map/province/tianjin', './lib/map/province/xianggang', './lib/map/province/xinjiang', './lib/map/province/xizang', './lib/map/province/yunnan', './lib/map/province/zhejiang'], function (_export, _context) {
+System.register(['app/plugins/sdk', './lib/echarts.min', './rendering', './lib/map/dark', './lib/map/china', './lib/map/china-city-loc', './lib/map/province/anhui', './lib/map/province/aomen', './lib/map/province/beijing', './lib/map/province/chongqing', './lib/map/province/fujian', './lib/map/province/gansu', './lib/map/province/guangdong', './lib/map/province/guangxi', './lib/map/province/guizhou', './lib/map/province/hainan', './lib/map/province/hebei', './lib/map/province/heilongjiang', './lib/map/province/henan', './lib/map/province/hubei', './lib/map/province/hunan', './lib/map/province/jiangsu', './lib/map/province/jiangxi', './lib/map/province/jilin', './lib/map/province/liaoning', './lib/map/province/neimenggu', './lib/map/province/ningxia', './lib/map/province/qinghai', './lib/map/province/shandong', './lib/map/province/shanghai', './lib/map/province/shanxi', './lib/map/province/shanxi1', './lib/map/province/sichuan', './lib/map/province/taiwan', './lib/map/province/tianjin', './lib/map/province/xianggang', './lib/map/province/xinjiang', './lib/map/province/xizang', './lib/map/province/yunnan', './lib/map/province/zhejiang'], function (_export, _context) {
   "use strict";
 
-  var MetricsPanelCtrl, echarts, rendering, _, darkJson, chinaJson, chinaLocs, anhuiData, aomenData, beijingData, chongqingData, fujianData, gansuData, guangdongData, guangxiData, guizhouData, hainanData, hebeiData, heilongjiangData, henanData, hubeiData, hunanData, jiangsuData, jiangxiData, jilinData, liaoningData, neimengguData, ningxiaData, qinghaiData, shandongData, shanghaiData, shanxiData, shanxi1Data, sichuanData, taiwanData, tianjinData, xianggangData, xinjiangData, xizangData, yunnanData, zhejiangData, _createClass, panelDefaults, ChinaMapCtrl;
+  var MetricsPanelCtrl, echarts, rendering, darkJson, chinaJson, chinaLocs, anhuiData, aomenData, beijingData, chongqingData, fujianData, gansuData, guangdongData, guangxiData, guizhouData, hainanData, hebeiData, heilongjiangData, henanData, hubeiData, hunanData, jiangsuData, jiangxiData, jilinData, liaoningData, neimengguData, ningxiaData, qinghaiData, shandongData, shanghaiData, shanxiData, shanxi1Data, sichuanData, taiwanData, tianjinData, xianggangData, xinjiangData, xizangData, yunnanData, zhejiangData, _createClass, ChinaMapCtrl;
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -42,8 +42,6 @@ System.register(['app/plugins/sdk', './lib/echarts.min', './rendering', 'lodash'
       echarts = _libEchartsMin.default;
     }, function (_rendering) {
       rendering = _rendering.default;
-    }, function (_lodash) {
-      _ = _lodash.default;
     }, function (_libMapDark) {
       darkJson = _libMapDark.default;
     }, function (_libMapChina) {
@@ -209,19 +207,6 @@ System.register(['app/plugins/sdk', './lib/echarts.min', './rendering', 'lodash'
       echarts.registerTheme('dark', darkJson);
       echarts.registerMap('china', chinaJson);
 
-      panelDefaults = {
-        backgroundColor: '#63696e',
-        itemNormalColor: '#2d3339',
-        itemBorderColor: '#404a59',
-        itemEmphasisColor: '#2a333d',
-        labelColor: '#f5f5f5',
-        labelEmphasisColor: '#f5896b',
-        dataColors: ['#83fa52', '#f6630e', '#f60e48'],
-        thresholds: '0,10',
-        thresholdTextColor: '#f5f5f5',
-        unit: 'ms'
-      };
-
       _export('ChinaMapCtrl', ChinaMapCtrl = function (_MetricsPanelCtrl) {
         _inherits(ChinaMapCtrl, _MetricsPanelCtrl);
 
@@ -242,9 +227,7 @@ System.register(['app/plugins/sdk', './lib/echarts.min', './rendering', 'lodash'
             _this.rootScope = $rootScope;
             _this.templateSrv = $injector.get('templateSrv');
             _this.variableSrvT = $injector.get('variableSrv');
-            _.defaults(_this.panel, panelDefaults);
             _this.events.on('data-received', _this.onDataReceived.bind(_this));
-            _this.events.on('init-edit-mode', _this.onInitEditMode.bind(_this));
           });
           return _this;
         }
@@ -370,11 +353,6 @@ System.register(['app/plugins/sdk', './lib/echarts.min', './rendering', 'lodash'
             }
 
             this.render();
-          }
-        }, {
-          key: 'onInitEditMode',
-          value: function onInitEditMode() {
-            this.addEditorTab('ChinaMap', 'public/plugins/grafana-chinamap-panel/editor.html', 2);
           }
         }, {
           key: 'link',

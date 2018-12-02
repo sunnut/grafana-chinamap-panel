@@ -49,7 +49,7 @@ export default function link(scope, elem, attrs, ctrl) {
         'iPhone 8': 'iphone8',
         'iPhone X': 'iphonex',
       };
-      let currSeriesName = '服务带宽';
+      let currSeriesName = 'iPhone 7';
       chart.container = echarts.init(element[0], 'dark');
       chart.option = {
         title: {
@@ -155,11 +155,9 @@ export default function link(scope, elem, attrs, ctrl) {
         geo: {
           map: 'china',
           selectedMode: 'single',
-          emphasis: {
-            label: {
-              show: true,
-              color: '#fff',
-            },
+          label: {
+            show: true,
+            color: '#fff',
           },
           itemStyle: {
             normal: {

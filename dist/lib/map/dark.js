@@ -44,7 +44,6 @@ System.register([], function (_export, _context) {
 
             _export('default', {
                 color: colorPalette,
-                backgroundColor: '#333',
                 tooltip: {
                     axisPointer: {
                         lineStyle: {
