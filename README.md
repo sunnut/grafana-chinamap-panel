@@ -1,5 +1,5 @@
 ## China Map Panel Plugin for Grafana:
-A panel plugin of china map for grafana.It can show the provinces of china.
+China Map Plugin can show data by china region.
   
 ## Installation
 * cd Your_Grafana_Home/data/plugins
